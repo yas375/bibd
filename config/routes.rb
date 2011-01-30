@@ -1,4 +1,12 @@
 KursachPoBibd::Application.routes.draw do
+  resources :stores
+  resources :suppliers
+  resources :products
+  resources :supplies, :except => [:destroy, :update, :edit, :show]
+  resources :orders, :except => [:destroy, :update, :edit, :show]
+
+  root :to => "welcome#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

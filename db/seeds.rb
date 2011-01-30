@@ -10,7 +10,7 @@
 Product.create!(:name => 'Фен LG2700', :sku => 'PSC-2305', :description => 'Фен для волос')
 Product.create!(:name => 'Электробритва BOSH-3000', :sku => 'B3000', :description => 'Бритва для мужчин. Зарядное в комплекте')
 Product.create!(:name => 'АОН Русь', :sku => 'rus-12', :description => 'Телефонный аппарат')
-Product.create!(:name => 'Старальная машина для дома Bosh 3000w', :sku => 'bosh3000w', :description => 'Стиаральная машина 3000w')
+Product.create!(:name => 'Стиральная машина для дома Bosh 3000w', :sku => 'bosh3000w', :description => 'Стиаральная машина 3000w')
 Product.create!(:name => 'Пылесос Rowenta 2500', :sku => 'row-2500', :description => 'Пылесос для ковров')
 Product.create!(:name => 'Часы луч', :sku => 'l2500', :description => 'Кварцевые наручные часы')
 Product.create!(:name => 'Кирпич красный', :sku => 'kir-2003', :description => 'Пустотелый')

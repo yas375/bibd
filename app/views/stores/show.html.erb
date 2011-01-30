@@ -1,0 +1,10 @@
+<% title "Магазин '#{@store.name}'" %>
+
+<p><%= @store.address %></p>
+<p><%= @store.description %></p>
+
+<p>
+  <%= link_to "Редактировать", edit_store_path(@store) %> |
+  <%= link_to "Удалить магазин", @store, :confirm => 'Вы уверены?', :method => :delete %> |
+  <%= link_to "К списку всех магазинов", stores_path %>
+</p>

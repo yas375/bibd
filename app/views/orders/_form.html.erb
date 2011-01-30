@@ -1,0 +1,13 @@
+<%= f.inputs do %>
+  <%= f.input :store %>
+<% end %>
+
+<% 5.times { f.object.line_items.build } if f.object.line_items.empty? %>
+<%= f.semantic_fields_for :line_items do |fl| %>
+  <%= fl.inputs do %>
+    <%= fl.input :product %>
+    <%= fl.input :quantity %>
+  <% end %>
+<% end %>
+
+<%= f.buttons %>

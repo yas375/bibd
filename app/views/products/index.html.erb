@@ -1,0 +1,23 @@
+<% title "Товары" %>
+
+<table class="table">
+  <tr>
+    <th>Sku</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  <% for product in @products %>
+    <tr>
+      <td><%= product.sku %></td>
+      <td><%= link_to product.name, product %></td>
+      <td><%= product.description %></td>
+      <td>
+        <%= link_to "Редактировать", edit_product_path(product) %><br />
+        <%= link_to "удалить", product, :confirm => 'Вы уверены?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Добавить товар", new_product_path %></p>

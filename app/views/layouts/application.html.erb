@@ -10,6 +10,13 @@
   </head>
   <body>
     <div id="container">
+      <ul>
+        <li><b><%= link_to 'Состояние склада', root_path %></b></li>
+        <li><%= link_to 'Магазины', stores_path %></li>
+        <li><%= link_to 'Поставщики товара', suppliers_path %></li>
+        <li><%= link_to 'Товары, с которыми ведётся работа', products_path %></li>
+      </ul>
+
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>

@@ -1,0 +1,16 @@
+<% title @product.name %>
+
+<p>
+  <strong>Артикул:</strong>
+  <%= @product.sku %>
+</p>
+<p>
+  <strong>Описание:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <%= link_to "Редактировать", edit_product_path(@product) %> |
+  <%= link_to "Удалить", @product, :confirm => 'Вы уверены?', :method => :delete %> |
+  <%= link_to "К списку продуктов", products_path %>
+</p>

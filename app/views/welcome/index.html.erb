@@ -1,0 +1,42 @@
+<% title "Состояние склада" %>
+
+<p>
+  <%= link_to 'Приём товара на склад', new_supply_path %> |
+  <%= link_to 'Отправка товара в магазин', new_order_path %>
+</p>
+
+<table class="table">
+  <tr>
+    <th>Артикул</th>
+    <th>Наименование</th>
+    <th>Количество</th>
+  </tr>
+  <% @products_in_stock.each do |product| %>
+    <tr>
+      <td><%= product.sku %></td>
+      <td><%= product.name %></td>
+      <td><%= product.quantity %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Последние 10 операций по складу</h2>
+
+<table class="table">
+  <tr>
+    <th>Тип операции</th>
+    <th>Товары</th>
+    <th>Дата</th>
+  </tr>
+  <% for obj in @last_operations %>
+    <tr>
+      <td><%= (obj.class.name == 'Supply') ? "Приём" : "Отправка" %></td>
+      <td><%= products_list(obj.line_items) %></td>
+      <td><%= format_date_with_time(obj.created_at) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>Смотреть: <%= link_to 'все поставки', supplies_path %>, <%= link_to 'все отправки', orders_path %>.</p>
+
+

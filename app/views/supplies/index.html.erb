@@ -1,0 +1,20 @@
+<% title "Все принятые партии товара" %>
+
+<table class="table">
+  <tr>
+    <th>Поставщик</th>
+    <th>Примечание</th>
+    <th>Товары</th>
+    <th>Дата</th>
+  </tr>
+  <% for supply in @supplies %>
+    <tr>
+      <td><%= link_to(supply.supplier.name, supply.supplier) if supply.supplier %></td>
+      <td><%= supply.description %></td>
+      <td><%= products_list(supply.line_items) %></td>
+      <td><%= format_date_with_time(supply.created_at) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Новая поставка товара", new_supply_path %></p>

@@ -1,6 +1,15 @@
 ru:
   formtastic:
     labels:
+      name: 'Название'
+      address: 'Адрес'
+      phone: 'Телефон'
+      description: 'Примечание'
+      supplier: 'Поставщик'
+      quantity: 'Количество'
+      product: 'Товар'
+      store: 'Магазин'
+      sku: 'Артикул'
     hints:
     actions:
       create: 'Создать'

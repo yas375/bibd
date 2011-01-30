@@ -1,0 +1,23 @@
+<% title "Поставщики товаров" %>
+
+<table class="table">
+  <tr>
+    <th>Название</th>
+    <th>Телефон</th>
+    <th>Примечание</th>
+    <th></th>
+  </tr>
+  <% for supplier in @suppliers %>
+    <tr>
+      <td><%= link_to supplier.name, supplier %></td>
+      <td><%= supplier.phone %></td>
+      <td><%= supplier.description %></td>
+      <td>
+        <%= link_to "Редактировать", edit_supplier_path(supplier) %><br />
+        <%= link_to "Удалить", supplier, :confirm => 'Вы уверены?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Добавить поставщика", new_supplier_path %></p>

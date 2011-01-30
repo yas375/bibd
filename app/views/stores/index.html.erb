@@ -1,0 +1,24 @@
+<% title "Магизины" %>
+<p>Список магазинов, в которые осуществляется поставка товара со склада.</p>
+
+<table class="table">
+  <tr>
+    <th>Название</th>
+    <th>Адрес</th>
+    <th>Примечание</th>
+    <th></th>
+  </tr>
+  <% for store in @stores %>
+    <tr>
+      <td><%= link_to store.name, store %></td>
+      <td><%= store.address %></td>
+      <td><%= store.description %></td>
+      <td>
+        <%= link_to "Редактировать", edit_store_path(store) %><br />
+        <%= link_to "Удалить", store, :confirm => 'Вы уверены?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Добавить магазин", new_store_path %></p>

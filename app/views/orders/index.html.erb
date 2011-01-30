@@ -1,0 +1,18 @@
+<% title "Все отправленные партии товара" %>
+
+<table class="table">
+  <tr>
+    <th>Магазин</th>
+    <th>Товары</th>
+    <th>Дата отправки</th>
+  </tr>
+  <% for order in @orders %>
+    <tr>
+      <td><%= link_to(order.store.name, order.store) if order.store %></td>
+      <td><%= products_list(order.line_items) %></td>
+      <td><%= format_date_with_time(order.created_at) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Новая отправка товара", new_order_path %></p>

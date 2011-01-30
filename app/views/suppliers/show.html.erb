@@ -1,0 +1,10 @@
+<% title "Поставщик '#{@supplier.name}'" %>
+
+<p><%= @supplier.phone %></p>
+<p><%= @supplier.description %></p>
+
+<p>
+  <%= link_to "Редактировать", edit_supplier_path(@supplier) %> |
+  <%= link_to "Удалить поставщика", @supplier, :confirm => 'Вы уверены?', :method => :delete %> |
+  <%= link_to "К списку всех поставщиков", suppliers_path %>
+</p>
